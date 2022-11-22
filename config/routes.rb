@@ -8,7 +8,10 @@ Rails.application.routes.draw do
   root to: 'tasks#index'
   get 'tasks', to: 'tasks#index'
   get 'tasks/new', to: 'tasks#new'
-  post 'tasks', to: 'tasks#p'
+  post 'tasks', to: 'tasks#create'
+
+  get 'tasks/:id/edit', to: 'tasks#edit'
+  patch 'tasks/:id', to: 'task#update'
 
   get 'tasks/:id', to: 'tasks#show', as: :task
 end
